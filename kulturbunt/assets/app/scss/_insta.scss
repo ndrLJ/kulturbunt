@@ -1,0 +1,36 @@
+.insta {
+  margin: 0 auto;
+  flex-direction: column;
+  background-image: url(/assets/images/insta-small.svg);
+  background-size: cover;
+  background-position: 100% 50%;
+  max-height: 660px;
+  max-width: 380px;
+  height: 41.3rem;
+  
+  @include breakpoint-up (medium) {
+    margin-top: 8rem;
+    background-image: url('/assets/images/insta-medium.svg');
+    max-height: 890px;
+    max-width: 768px;
+    min-height: 64rem;
+    min-width: 38rem;
+  }
+
+  @include breakpoint-up (large) {
+    margin-top: 12rem;
+    background-image: url('/assets/images/insta-large.svg');
+    background-position: 40% 50%;
+    max-height: 980px;
+    max-width: 1100px;
+  }
+
+  &__txt {
+    padding: 0rem 5rem;
+    text-align: center;
+
+    @include breakpoint-up (medium) {
+      padding: 0 9rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.intro {
+  flex-direction: column;
+  background-image: url('/assets/images/bg-small.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30% 40%;
+  min-height: 80vh;
+  width: 100%;
+
+  @include breakpoint-up (medium) {
+    background-image: url('/assets/images/bg-medium.svg');
+  }
+
+  @include breakpoint-up (large) {
+    background-image: url('/assets/images/bg-large.svg');
+  }
+}

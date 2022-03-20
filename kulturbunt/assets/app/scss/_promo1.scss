@@ -1,0 +1,45 @@
+.promo1 {
+  margin: 0;
+  background-image: url('/assets/images/promo1-small.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 600px;
+  height: 37.5rem;
+
+  @include breakpoint-up (medium) {
+    background-image: url('/assets/images/promo1-medium.svg');
+  }
+
+  @include breakpoint-up (large) {
+    background-image: url('/assets/images/promo1-large.svg');
+  }
+
+  &__text {
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    min-height: 10vh;
+    color: $yellow;
+    text-align: center;
+
+    @include breakpoint-up (medium) {
+      padding: 4rem;
+    }
+
+    @include breakpoint-up (large) {
+      padding: 8rem;
+    }
+
+    h3 {
+      padding-top: 17rem;
+
+      @include breakpoint-up (medium) {
+        padding-top: 10rem;
+      }
+
+      @include breakpoint-up (large) {
+        padding-top: 4rem;
+      }
+    }
+  }
+}

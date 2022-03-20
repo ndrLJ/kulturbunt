@@ -1,0 +1,35 @@
+.header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+
+  @include breakpoint-up (medium) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-l;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &__logo {
+    width: 5.8325rem;
+    border: 3px $yellow solid;
+    border-radius: 50%;
+    display: block;
+    transform-origin: bottom;
+    animation: animateLogo 2500ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+
+    @include breakpoint-up (medium) {
+      width: 7rem;
+      height: 7rem;
+    }
+
+    @include breakpoint-up (large) {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}

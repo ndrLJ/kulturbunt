@@ -1,0 +1,324 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: $font-s;
+  line-height: 1;
+  background-color: $black;
+}
+
+a {
+  text-decoration: none;
+  font-size: $font-s;
+
+  @include breakpoint-up (medium) {
+    font-size: $font-m;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-l;
+  }
+}
+
+h1 {
+  font-size: $font-l;
+  color: $yellow;
+
+  @include breakpoint-up (medium) {
+    font-size: $font-xl;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-xxl;
+  }
+}
+
+h2 {
+  font-size: $font-m;
+
+  @include breakpoint-up (medium) {
+    font-size: $font-l;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-xl;
+  }
+}
+
+h3 {
+  font-size: $font-s;
+
+  @include breakpoint-up (medium) {
+    font-size: $font-m;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-l;
+  }
+}
+
+p {
+  font-size: $font-s;
+
+  @include breakpoint-up (medium) {
+    font-size: $font-m;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-l;
+  }
+}
+
+// Buttons
+
+button, .button {
+  position: relative;
+  width: 5.8325rem;
+  height: 5.8325rem;
+  font-family: 'Inter', sans-serif;
+  font-size: $font-s;
+  background-color: $yellow;
+  color: $black;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+
+  @include breakpoint-up (medium) {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  @include breakpoint-up (large) {
+    width: 10rem;
+    height: 10rem;
+    font-size: $font-l;
+  }
+}
+
+.front, .back {
+  position: absolute;
+  padding-top: 1rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: flat;
+  transform-style: flat;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  transition: transform .3s ease-out;
+
+  @include breakpoint-up (medium) {
+    padding-top: 1.5rem;
+  }
+
+  @include breakpoint-up (large) {
+    padding-top: 1.9rem;
+  }
+}
+
+.front {
+  -webkit-transform: rotateX(0deg) translateZ(25px);
+  -ms-transform: rotateX(0deg) translateZ(25px);
+  -o-transform: rotateX(0deg) translateZ(25px);
+  transform: rotateX(0deg) translateZ(25px);
+}
+
+.back {
+  -webkit-transform: rotateX(90deg) translateZ(25px);
+  -ms-transform: rotateX(90deg) translateZ(25px);
+  -o-transform: rotateX(90deg) translateZ(25px);
+  transform: rotateX(90deg) translateZ(25px);
+}
+
+.button:hover .front {
+  -webkit-transform: rotateX(-90deg) translateZ(25px);
+  -ms-transform: rotateX(-90deg) translateZ(25px);
+  -o-transform: rotateX(-90deg) translateZ(25px);
+  transform: rotateX(-90deg) translateZ(25px);
+}
+
+.button:hover .back {
+  -webkit-transform: rotateX(0deg) translateZ(25px);
+  -ms-transform: rotateX(0deg) translateZ(25px);
+  -o-transform: rotateX(0deg) translateZ(25px);
+  transform: rotateX(0deg) translateZ(25px);
+}
+
+.cta1 {
+  font-size: $font-s;
+  color: $black;
+  border: 0px;
+  position: relative;
+
+  &::before, &::after {
+    content:"";
+    border-color: $black;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    border-style: solid;
+    border-width: 0;
+    height: 24px;
+    position: absolute;
+    width: 24px;
+  }
+
+  &::before {
+    border-left-width: 2px;
+    border-top-width: 2px;
+    left: -5px;
+    top: -5px;
+  }
+
+  &::after {
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    right: -5px;
+    bottom: -5px;
+  }
+
+  &:hover::before, &:hover::after {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include breakpoint-up (medium) {
+    font-size: $font-m;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-l;
+  }
+}
+
+.cta2 {
+  font-size: $font-s;
+  color: $yellow;
+  border: 0px;
+  position: relative;
+
+  &::before, &::after {
+    content:"";
+    border-color: $yellow;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    border-style: solid;
+    border-width: 0;
+    height: 24px;
+    position: absolute;
+    width: 24px;
+  }
+
+  &::before {
+    border-right-width: 2px;
+    border-top-width: 2px;
+    right: -5px;
+    top: -5px;
+  }
+
+  &::after {
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    left: -5px;
+    bottom: -5px;
+  }
+
+  &:hover::before, &:hover::after {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include breakpoint-up (medium) {
+    font-size: $font-m;
+  }
+
+  @include breakpoint-up (large) {
+    font-size: $font-l;
+  }
+}
+
+.ctafb {
+  padding-top: 1.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: $font-l;
+  text-decoration: none;
+  color: $yellow;
+  width: 14rem;
+  height: 6rem;
+  transition: 0.5s linear;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  border: 1px $yellow dashed;
+
+  &:hover {
+    color: $black;
+    border: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 14rem;
+    height: 6rem;
+    background: $yellow;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
+  }
+
+  &:hover::before {
+    transform: scale(1);
+  }
+}
+
+.ctainsta {
+  height: 48px;
+  width: 48px;
+  background-image: url('/assets/images/insta-cta.svg');
+  background-size: 100%;
+
+  @include breakpoint-up (large) {
+    height: 96px;
+    width: 96px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Flexbox
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
